@@ -1,0 +1,83 @@
+body{
+    background: darkgray;
+    margin: auto;
+    width: 96%;
+    padding: 0%;
+}
+
+#header{
+    background: wheat;
+    padding: 1%;
+    margin: auto;
+    color: slateblue;
+    font-family: inherit;
+    border-bottom: black 1px solid;
+}
+
+#btnRepos{
+    border:  black 2px solid;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: wheat;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s
+    
+}
+#btnIssues{
+    border:  black 2px solid;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: wheat;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s
+}
+
+#btnCommits{
+    border: black 2px solid;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: wheat;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s
+}
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
