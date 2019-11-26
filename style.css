@@ -96,7 +96,7 @@ body{
     transition: all 0.3s
 }
 
-#btncreateIssues{
+#btnCreateIssue{
     border:  black 2px solid;
     font-family: 'Lato';
     font-size: inherit;
