@@ -11,26 +11,28 @@
 <header id="header">
 <h1> Akader Github APi tutorial JS3-Week2 Project</h1>
 </header>
-<button id="btnRepos">Repos</button>
-<button id="btnIssues">Issues</button>
-<button id="btnCommits">Commits</button>
-<button id="btnIssuesPrivate">Issues Private</button>
-<button id="btncreateIssues">Create Issues</button>
-<div id="divResult">
+
+<button id = 'btnRepos'>Repos</button>
+<button id = 'btnIssues'>Issues</button>
+<button id = 'btnCommits'>Commits</button>
+<button id = 'btnIssuesPrivate'>Issues Private</button>
+<button id = 'btnCreateIssue'>Create Issue</button>
+
+<div id = 'divResult'>
 </div>
+
 <script>
     const btnRepos = document.getElementById("btnRepos")
     const btnIssues = document.getElementById("btnIssues")
     const btnIssuesPrivate = document.getElementById("btnIssuesPrivate")
-    const btncreateIssue = document.getElementById("btncreateIssue")
+    const btnCreateIssue = document.getElementById("btnCreateIssue")
     const btnCommits = document.getElementById("btnCommits")
     const divResult = document.getElementById("divResult")
-
     btnRepos.addEventListener("click", getRepos)
     btnIssues.addEventListener("click", getIssues)
     btnCommits.addEventListener("click", e=> getCommits())
     btnIssuesPrivate.addEventListener("click", e=> getIssuesPrivate())
-    btnCreateIssue.addEventListener("click", e=> getcreateIssues())
+    btnCreateIssue.addEventListener("click", e=> createIssues())
 
 
 async function getRepos(){
@@ -56,10 +58,10 @@ function clear(){
 //section6
 async function createIssues() {
         clear();
-        const url = "https://api.github.com/repos/husseintest/sandboxpublic/issues"
+        const url = "https://api.github.com/repos/akadarAkku/test-github-api/issues"
         
         const headers = {
-            "Authorization" : `Token aee50410e8dd47641f20c2119b9ea7f01167dbd6`
+            "Authorization" : `Token b59147eacf96315985b444abf0039d14d8054f0f`
         }
         const payLoad = {
             title: "Hey my brand new issue!!!"
