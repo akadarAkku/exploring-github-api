@@ -7,25 +7,27 @@
     <title>javascript-week2-projct</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
 <header id="header">
-<h1> Akader Github tutorial</h1>
+<h1> Akader Github APi tutorial JS3-Week2 Project</h1>
 </header>
 <button id="btnRepos">Repos</button>
 <button id="btnIssues">Issues</button>
 <button id="btnCommits">Commits</button>
+<button id="btnIssuesPrivate">Issues Private</button>
 <div id="divResult">
-
 </div>
 <script>
 const btnRepos = document.getElementById("btnRepos")
 const btnIssues = document.getElementById("btnIssues")
 const btnCommits = document.getElementById("btnCommits")
+const btnIssuesPrivate = document.getElementById("btnIssuesPrivate")
 
 const divResult = document.getElementById("divResult")
 btnRepos.addEventListener("click", getRepos)
 btnIssues.addEventListener("click", getIssues)
 btnCommits.addEventListener("click", getCommits)
-
+btnIssuesPrivate.addEventListener("click", e=>getIssuesPrivate())
 
 async function getRepos(){
 clear();
@@ -51,6 +53,30 @@ async function getIssues(){
 clear();
 const url = "https://api.github.com/search/issues?q=author:RandellDawson repo:freeCodeCamp/freeCodeCamp type:issue"
 const response = await fetch(url)
+const result = await response.json()
+
+result.items.forEach(i=>{
+const anchor =document.createElement("a")
+anchor.href =i.html_url;
+anchor.textContent = i.title;
+divResult.appendChild(anchor)
+divResult.appendChild(document.createElement("br"))
+
+})
+}
+
+async function getIssuesPrivate(){
+clear();
+const username = "husseintest"
+const password = "hpf;hkh123"
+Headers = {
+    
+    "Authorization" : `Token 65b23f5f138ed4a7aa21d66d26aa6a90f7d66a`
+}
+const url = "https://api.github.com/search/issues?q=repo:husseintest/sandboxprivate type:issue"
+const response = await fetch(url, {
+    "method": "GET",
+})
 const result = await response.json()
 
 result.items.forEach(i=>{
@@ -103,9 +129,10 @@ const link = response.headers.get("link")
             divResult.appendChild(btn);
         })
 };
-
 </script>
-<body>
+<section id="footer">
+<footer> &copy 2019 Akader | HYF |Javascript-week2-project</footer>
+</section>
     
 </body>
 </html>
