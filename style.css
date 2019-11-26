@@ -24,15 +24,17 @@ body{
     cursor: pointer;
     padding: 25px 80px;
     display: inline-block;
-    margin: 15px 30px;
+    width: 10%;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 700;
     outline: none;
     position: relative;
+    text-align: left;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s
+    
+    
     
 }
 #btnIssues{
@@ -44,19 +46,19 @@ body{
     cursor: pointer;
     padding: 25px 80px;
     display: inline-block;
-    margin: 15px 30px;
+    width: 10%;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 700;
     outline: none;
     position: relative;
+    text-align: left;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s
 }
 
 #btnCommits{
-    border: black 2px solid;
+    border:  black 2px solid;
     font-family: 'Lato';
     font-size: inherit;
     color: inherit;
@@ -64,19 +66,19 @@ body{
     cursor: pointer;
     padding: 25px 80px;
     display: inline-block;
-    margin: 15px 30px;
+    width: 12%;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 700;
     outline: none;
     position: relative;
+    text-align: left;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s
 }
 
 #btnIssuesPrivate{
-    border: black 2px solid;
+    border:  black 2px solid;
     font-family: 'Lato';
     font-size: inherit;
     color: inherit;
@@ -84,12 +86,30 @@ body{
     cursor: pointer;
     padding: 25px 80px;
     display: inline-block;
-    margin: 15px 30px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 700;
     outline: none;
     position: relative;
+    text-align: left;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s
+}
+
+#btncreateIssues{
+    border:  black 2px solid;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: wheat;
+    cursor: pointer;
+    padding: 25px 100px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    text-align: left;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s
@@ -104,5 +124,6 @@ body{
     text-align: center;
     border-top: black 2px solid;
     height: 4%;
+    font-weight: 600;
 }
 
