@@ -61,10 +61,10 @@ async function createIssues() {
         const url = "https://api.github.com/repos/akadarAkku/test-github-api/issues"
         
         const headers = {
-            "Authorization" : `Token b59147eacf96315985b444abf0039d14d8054f0f`
+            "Authorization" : `Token 69c207d86ff3a12826d0f9823d3f6116c1745e2a`
         }
         const payLoad = {
-            title: "Hey my brand new issue!!!"
+            title: "Hey this is my brand new issue!!!"
         }
         const response = await fetch(url, {
             method: "POST",
@@ -80,6 +80,7 @@ async function createIssues() {
             divResult.appendChild(document.createElement("br"))
  
     }
+
 
 //index section4 four 
 async function getIssues() {
