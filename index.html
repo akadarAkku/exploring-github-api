@@ -15,19 +15,23 @@
 <button id="btnIssues">Issues</button>
 <button id="btnCommits">Commits</button>
 <button id="btnIssuesPrivate">Issues Private</button>
+<button id="btncreateIssues">Create Issues</button>
 <div id="divResult">
 </div>
 <script>
-const btnRepos = document.getElementById("btnRepos")
-const btnIssues = document.getElementById("btnIssues")
-const btnCommits = document.getElementById("btnCommits")
-const btnIssuesPrivate = document.getElementById("btnIssuesPrivate")
+    const btnRepos = document.getElementById("btnRepos")
+    const btnIssues = document.getElementById("btnIssues")
+    const btnIssuesPrivate = document.getElementById("btnIssuesPrivate")
+    const btncreateIssue = document.getElementById("btncreateIssue")
+    const btnCommits = document.getElementById("btnCommits")
+    const divResult = document.getElementById("divResult")
 
-const divResult = document.getElementById("divResult")
-btnRepos.addEventListener("click", getRepos)
-btnIssues.addEventListener("click", getIssues)
-btnCommits.addEventListener("click", getCommits)
-btnIssuesPrivate.addEventListener("click", e=>getIssuesPrivate())
+    btnRepos.addEventListener("click", getRepos)
+    btnIssues.addEventListener("click", getIssues)
+    btnCommits.addEventListener("click", e=> getCommits())
+    btnIssuesPrivate.addEventListener("click", e=> getIssuesPrivate())
+    btnCreateIssue.addEventListener("click", e=> getcreateIssues())
+
 
 async function getRepos(){
 clear();
@@ -48,46 +52,72 @@ function clear(){
     while(divResult.firstChild)
     divResult.removeChild(divResult.firstChild);
 }
+
+//section6
+async function createIssues() {
+        clear();
+        const url = "https://api.github.com/repos/husseintest/sandboxpublic/issues"
+        
+        const headers = {
+            "Authorization" : `Token aee50410e8dd47641f20c2119b9ea7f01167dbd6`
+        }
+        const payLoad = {
+            title: "Hey my brand new issue!!!"
+        }
+        const response = await fetch(url, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(payLoad)
+        })
+        const result = await response.json()
+       const i = result;
+            const anchor = document.createElement("a")
+            anchor.href = i.html_url;
+            anchor.textContent = i.title;
+            divResult.appendChild(anchor)
+            divResult.appendChild(document.createElement("br"))
+ 
+    }
+
 //index section4 four 
-async function getIssues(){
-clear();
-const url = "https://api.github.com/search/issues?q=author:RandellDawson repo:freeCodeCamp/freeCodeCamp type:issue"
-const response = await fetch(url)
-const result = await response.json()
+async function getIssues() {
+        clear();
+        const url = "https://api.github.com/search/issues?q=author:raisedadead repo:freecodecamp/freecodecamp type:issue"
+        const response = await fetch(url)
+        const result = await response.json()
+        result.items.forEach(i=>{
+        const anchor = document.createElement("a")
+        anchor.href = i.html_url;
+        anchor.textContent = i.title;
+        divResult.appendChild(anchor)
+        divResult.appendChild(document.createElement("br"))
+        })
+    }
 
-result.items.forEach(i=>{
-const anchor =document.createElement("a")
-anchor.href =i.html_url;
-anchor.textContent = i.title;
-divResult.appendChild(anchor)
-divResult.appendChild(document.createElement("br"))
+//section 5
+async function getIssuesPrivate() {
+        clear();
+        const username = "husseintest"
+        const password = "hpf;hkh123"
+        const headers = {
+            "Authorization" : `Basic ${btoa(`${username}:${password}`)}`
+        } 
+        const url = "https://api.github.com/search/issues?q=repo:husseintest/sandboxprivate type:issue"
+        const response = await fetch(url, {
+            "method": "GET",
+            "headers": headers
+        })
+        const result = await response.json()
+        result.items.forEach(i=>{
+            const anchor = document.createElement("a")
+            anchor.href = i.html_url;
+            anchor.textContent = i.title;
+            divResult.appendChild(anchor)
+            divResult.appendChild(document.createElement("br"))
+        })
+    }
 
-})
-}
 
-async function getIssuesPrivate(){
-clear();
-const username = "husseintest"
-const password = "hpf;hkh123"
-Headers = {
-    
-    "Authorization" : `Token 65b23f5f138ed4a7aa21d66d26aa6a90f7d66a`
-}
-const url = "https://api.github.com/search/issues?q=repo:husseintest/sandboxprivate type:issue"
-const response = await fetch(url, {
-    "method": "GET",
-})
-const result = await response.json()
-
-result.items.forEach(i=>{
-const anchor =document.createElement("a")
-anchor.href =i.html_url;
-anchor.textContent = i.title;
-divResult.appendChild(anchor)
-divResult.appendChild(document.createElement("br"))
-
-})
-}
 //index section three
 async function getCommits(){
 clear();
@@ -131,7 +161,7 @@ const link = response.headers.get("link")
 };
 </script>
 <section id="footer">
-<footer> &copy 2019 Akader | HYF |Javascript-week2-project</footer>
+<footer> &copy 2019 Akader | HYF |Javascript3-week2-project</footer>
 </section>
     
 </body>
