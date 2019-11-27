@@ -58,29 +58,28 @@ function clear(){
 //section6
 async function createIssues() {
         clear();
-        const url = "https://api.github.com/repos/akadarAkku/test-github-api/issues"
+        const url = "https://api.github.com/repos/HackYourFutureBelgium/class-6/issues/67"
         
         const headers = {
-            "Authorization" : `Token 69c207d86ff3a12826d0f9823d3f6116c1745e2a`
+            "Authorization" : `Token f48402f2cb23511b2c6164606938b63211ad004d`
         }
         const payLoad = {
-            title: "Hey this is my brand new issue!!!"
+            title: "Click to see my exploring-github-api cart"
         }
         const response = await fetch(url, {
             method: "POST",
             headers: headers,
             body: JSON.stringify(payLoad)
         })
-        const result = await response.json()
-       const i = result;
-            const anchor = document.createElement("a")
-            anchor.href = i.html_url;
-            anchor.textContent = i.title;
-            divResult.appendChild(anchor)
-            divResult.appendChild(document.createElement("br"))
+    const result = await response.json()
+    const i = result;
+    const anchor = document.createElement("a")
+    anchor.href = i.html_url;
+    anchor.textContent = i.title;
+    divResult.appendChild(anchor)
+    divResult.appendChild(document.createElement("br"))
  
     }
-
 
 //index section4 four 
 async function getIssues() {
